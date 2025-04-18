@@ -22,10 +22,12 @@
   border-radius: 8px;
   padding: 1rem;
   border: 1px solid var(--gray-700);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .newText input:focus {
   color: var(--gray-100);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .newText button {
@@ -98,6 +100,13 @@
 
 .contentBox small {
   font-size: 1rem;
+}
+
+.concludedLabel strong{
+  margin-top: 1rem;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--purple-500);
 }
 
 @media (max-width: 768px) {

@@ -99,7 +99,7 @@ export function App() {
               <span>{tasks.length}</span>
             </div>
 
-            <div>
+            <div className={styles.concludedLabel}>
               <strong>Concluídas</strong>
               <span>
                 {totalCompleted} de {tasks.length}
