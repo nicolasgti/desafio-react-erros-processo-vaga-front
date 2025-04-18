@@ -86,7 +86,8 @@ export function App() {
             onChange={handleNewTaskChange}
             required
           />
-          <button type="submit" disabled={!newTask.trim()}> //certificndo que o botão só é habilitado quando o input não está vazio
+          {/* certificndo que o botão só é habilitado quando o input não está vazio */}
+          <button type="submit" disabled={!newTask.trim()}> 
             Criar
             <PlusCircle size={20} />
           </button>
