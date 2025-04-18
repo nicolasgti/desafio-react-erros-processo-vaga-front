@@ -81,7 +81,7 @@ export function App() {
         <form className={styles.newText} onSubmit={handleCreateTask}>
           <input
             type="text"
-            placeholder="Adicione uma tarefa"
+            placeholder="Adicione uma nova tarefa"
             value={newTask}
             onChange={handleNewTaskChange}
             required
