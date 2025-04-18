@@ -1,7 +1,15 @@
 import { Trash } from "phosphor-react";
 import styles from "./task.module.css";
 
-export function Task({ checked, title, id, onComplete, onDelete }: any) {
+interface TaskProps { // Definicao de interface para as props
+  id: string;
+  checked: boolean;
+  title: string;
+  onComplete: (id: string) => void;
+  onDelete: (id: string) => void;
+}
+
+export function Task({ checked, title, id, onComplete, onDelete }: TaskProps) {
   const handleCompleteTask = () => {
     onComplete(id);
   };
@@ -15,14 +23,18 @@ export function Task({ checked, title, id, onComplete, onDelete }: any) {
       <div>
         <input
           type="checkbox"
-          id="task"
+          id={`task-${id}`} // Adicionando id para acessibilidade
           name="task"
           checked={checked}
-          onClick={handleCompleteTask}
+          onChange={handleCompleteTask} // Corrigido para `onChange` para evitar warnings
         />
-        <label htmlFor="task">{title}</label>
+        <label htmlFor={`task-${id}`}>{title}</label>
       </div>
-      <button type="button" onClick={handleDeleteTask}>
+      <button
+        type="button"
+        onClick={handleDeleteTask} 
+        aria-label={`Deletar a tarefa ${title}`} // Adicionando aria-label para acessibilidade
+      >
         <Trash size={24} />
       </button>
     </div>

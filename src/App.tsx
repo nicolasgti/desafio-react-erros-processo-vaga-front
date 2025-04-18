@@ -33,8 +33,8 @@ export function App() {
   const [totalCompleted, setTotalCompleted] = useState(0)
 
   useEffect(() => {
-   setTasks(data) 
-  }, []) // Adiconando uma dependencia vazia para evitar loop infinito
+   setTasks(data)
+  }, [data]) // Adiconando uma dependencia para evitar loop
 
   const handleNewTaskChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setNewTask(event.target.value); //Corrigindo o tipo do evento, removendos os "anys"
@@ -106,7 +106,7 @@ export function App() {
               </span>
             </div>
           </div>
-          <div className={styles.contentBox}>
+          <div className={styles.contentBox}>         
             {tasks.length > 0 ? ( //Garantingo que a lista de tarefas seja sempre uma lista e nao undefined
               tasks.map((task) => (
                 <Task
